@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.HospedagemContratada"
+             Title="Resumo da Hospedagem"
+             BackgroundColor="{StaticResource Gray100}">
+
+    <VerticalStackLayout Padding="20" Spacing="15" VerticalOptions="CenterAndExpand">
+
+        <Label Text="Resumo da Estadia"
+               FontSize="32"
+               FontFamily="Kalam"
+               TextColor="{StaticResource Primary}"
+               HorizontalOptions="Center" />
+
+        <Frame Padding="15">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="{Binding QuartoSelected.Descricao}"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource Primary}" />
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Adultos:" FontAttributes="Bold" />
+                    <Label Text="{Binding QtdAdultos}" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Crianças:" FontAttributes="Bold" />
+                    <Label Text="{Binding QtdCriancas}" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Check-in:" FontAttributes="Bold" />
+                    <Label Text="{Binding DataCheckIn, StringFormat='{0:dd/MM/yyyy}'}" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Check-out:" FontAttributes="Bold" />
+                    <Label Text="{Binding DataCheckOut, StringFormat='{0:dd/MM/yyyy}'}" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Dias de Estadia:" FontAttributes="Bold" />
+                    <Label Text="{Binding Estadia}" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Frame Padding="15" BackgroundColor="{StaticResource Secondary}">
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Label Text="Valor Total:" FontSize="20" TextColor="White" FontAttributes="Bold" />
+                <Label Text="{Binding ValorTotal, StringFormat='R$ {0:F2}'}" FontSize="20" TextColor="White" FontAttributes="Bold" />
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Button Text="Voltar"
+                Clicked="BtnVoltar_Clicked"
+                Margin="0,20,0,0" />
+
+    </VerticalStackLayout>
+</ContentPage>

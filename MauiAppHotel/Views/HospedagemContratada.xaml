@@ -44,6 +44,11 @@
                     <Label Text="Dias de Estadia:" FontAttributes="Bold" />
                     <Label Text="{Binding Estadia}" />
                 </HorizontalStackLayout>
+
+                <Label x:Name="lblProtocolo"
+       FontSize="14"
+       FontAttributes="Bold"
+       TextColor="#4A148C" />
             </VerticalStackLayout>
         </Frame>
 
